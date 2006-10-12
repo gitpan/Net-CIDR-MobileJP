@@ -2,7 +2,7 @@ package Net::CIDR::MobileJP;
 use strict;
 use warnings;
 use Carp;
-use version; our $VERSION = qv('0.0.1');
+use version; our $VERSION = qv('0.0.2');
 use YAML;
 use Net::CIDR::Lite;
 
@@ -90,7 +90,7 @@ Carrier name is compatible with L<HTTP::MobileAgent>.
 =head1 AUTHORS
 
   Tokuhiro Matsuno  C<< <tokuhiro __at__ mobilefactory.jp> >>
-  id:spiritloose
+  Jiro Nishiguchi
 
 =head1 THANKS TO
 
