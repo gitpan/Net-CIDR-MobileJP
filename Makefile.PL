@@ -1,23 +1,35 @@
 use strict;
 use warnings;
-use ExtUtils::MakeMaker;
+use lib qw(lib);
+use inc::Module::Install;
+use YAML;
+use File::Spec;
+use Net::CIDR::MobileJP::Scraper;
 
-WriteMakefile(
-    NAME                => 'Net::CIDR::MobileJP',
-    AUTHOR              => 'Tokuhiro Matsuno <tokuhiro __at__ mobilefactory.jp>',
-    VERSION_FROM        => 'lib/Net/CIDR/MobileJP.pm',
-    ABSTRACT_FROM       => 'lib/Net/CIDR/MobileJP.pm',
-    PL_FILES            => {},
-    PREREQ_PM => {
-        'HTTP::MobileAgent'       => 0,
-        'Jcode'                   => 0,
-        'LWP::UserAgent'          => 0,
-        'Module::Pluggable::Fast' => 0,
-        'Net::CIDR::Lite'         => 0,
-        'UNIVERSAL::require'      => 0,
-        'YAML'                    => 0,
-        'version'                 => 0,
-      },
-    dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
-    clean               => { FILES => 'Net-CIDR-MobileJP-*' },
-);
+sub GenYAML {
+    mkdir 'share';
+    open(my $fh, '>', File::Spec->catfile('share', 'cidr.yaml')) or die "can't open file";
+    print $fh YAML::Dump(Net::CIDR::MobileJP::Scraper->new->run);
+    close($fh);
+}
+
+name            'Net-CIDR-MobileJP';
+all_from        'lib/Net/CIDR/MobileJP.pm';
+
+requires 'HTTP::MobileAgent'       => 0;
+requires 'Jcode'                   => 0;
+requires 'LWP::UserAgent'          => 0;
+requires 'Module::Pluggable::Fast' => 0;
+requires 'Net::CIDR::Lite'         => 0;
+requires 'UNIVERSAL::require'      => 0;
+requires 'YAML'                    => 0;
+requires 'version'                 => 0;
+requires 'File::ShareDir'          => 0;
+
+install_share;
+
+auto_install;
+WriteAll;
+
+GenYAML;
+

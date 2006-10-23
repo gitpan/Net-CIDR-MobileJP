@@ -1,5 +1,9 @@
 Revision history for Net-CIDR-MobileJP
 
+0.0.3  Mon Oct 23 21:43:05 JST 2006
+      use Make::Install.
+      use File::ShareDir.
+
 0.0.2  Fri Oct 13 00:09:54 JST 2006
        Change Author Name.
        Hatena ID to real name.

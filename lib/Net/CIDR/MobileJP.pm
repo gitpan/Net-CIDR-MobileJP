@@ -2,9 +2,10 @@ package Net::CIDR::MobileJP;
 use strict;
 use warnings;
 use Carp;
-use version; our $VERSION = qv('0.0.2');
+use version; our $VERSION = 0.03;
 use YAML;
 use Net::CIDR::Lite;
+use File::ShareDir ();
 
 sub new {
     my ($class, $stuff) = @_;
@@ -35,9 +36,12 @@ sub _load_config {
     if (-f $stuff && -r _) {
         # load yaml from file
         $data = YAML::LoadFile($stuff);
-    } else {
+    } elsif ($stuff) {
         # raw data
         $data = $stuff;
+    } else {
+        # generated file
+        $data = YAML::LoadFile(File::ShareDir::module_file('Net::CIDR::MobileJP', 'cidr.yaml'));
     }
     return $data;
 }
