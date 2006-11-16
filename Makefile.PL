@@ -7,7 +7,6 @@ use File::Spec;
 use Net::CIDR::MobileJP::Scraper;
 
 sub GenYAML {
-    mkdir 'share';
     open(my $fh, '>', File::Spec->catfile('share', 'cidr.yaml')) or die "can't open file";
     print $fh YAML::Dump(Net::CIDR::MobileJP::Scraper->new->run);
     close($fh);

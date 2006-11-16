@@ -2,7 +2,7 @@ package Net::CIDR::MobileJP;
 use strict;
 use warnings;
 use Carp;
-use version; our $VERSION = 0.03;
+use version; our $VERSION = 0.04;
 use YAML;
 use Net::CIDR::Lite;
 use File::ShareDir ();
