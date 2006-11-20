@@ -4,10 +4,10 @@ use lib qw(lib);
 use inc::Module::Install;
 use YAML;
 use File::Spec;
-use Net::CIDR::MobileJP::Scraper;
 
 sub GenYAML {
     open(my $fh, '>', File::Spec->catfile('share', 'cidr.yaml')) or die "can't open file";
+    require Net::CIDR::MobileJP::Scraper;
     print $fh YAML::Dump(Net::CIDR::MobileJP::Scraper->new->run);
     close($fh);
 }
@@ -27,7 +27,9 @@ requires 'File::ShareDir'          => 0;
 
 install_share;
 
-auto_install;
+my $cwd = Cwd::cwd;
+auto_install_now;
+chdir $cwd;
 WriteAll;
 
 GenYAML;

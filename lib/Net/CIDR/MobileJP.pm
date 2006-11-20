@@ -2,7 +2,7 @@ package Net::CIDR::MobileJP;
 use strict;
 use warnings;
 use Carp;
-use version; our $VERSION = 0.04;
+use version; our $VERSION = 0.06;
 use YAML;
 use Net::CIDR::Lite;
 use File::ShareDir ();
@@ -33,7 +33,7 @@ sub _load_config {
     my ($self, $stuff) = @_;
 
     my $data;
-    if (-f $stuff && -r _) {
+    if (defined $stuff && -f $stuff && -r _) {
         # load yaml from file
         $data = YAML::LoadFile($stuff);
     } elsif ($stuff) {
@@ -99,6 +99,7 @@ Carrier name is compatible with L<HTTP::MobileAgent>.
 =head1 THANKS TO
 
   Tatsuhiko Miyagawa
+  Masayoshi Sekimura
 
 =head1 SEE ALSO
 
