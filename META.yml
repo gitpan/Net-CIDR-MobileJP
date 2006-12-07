@@ -20,4 +20,4 @@ requires:
   UNIVERSAL::require: 0
   YAML: 0
   version: 0
-version: 0.06
+version: 0.07

@@ -11,6 +11,11 @@ sub new {
     bless {}, $class;
 }
 
+sub url {
+    my ($self, ) = @_;
+    croak "this method is abstract : $self";
+}
+
 sub run {
     my ($self, ) = @_;
 

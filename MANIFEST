@@ -26,7 +26,6 @@ README
 share/DUMMY
 t/00.load.t
 t/01.base.t
-t/dependencies.t
 t/perlcritic.t
 t/pod.t
 t/spelling.t

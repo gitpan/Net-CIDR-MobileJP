@@ -2,7 +2,7 @@ package Net::CIDR::MobileJP;
 use strict;
 use warnings;
 use Carp;
-use version; our $VERSION = 0.06;
+use version; our $VERSION = 0.07;
 use YAML;
 use Net::CIDR::Lite;
 use File::ShareDir ();
@@ -100,6 +100,7 @@ Carrier name is compatible with L<HTTP::MobileAgent>.
 
   Tatsuhiko Miyagawa
   Masayoshi Sekimura
+  HIROSE, Masaaki
 
 =head1 SEE ALSO
 

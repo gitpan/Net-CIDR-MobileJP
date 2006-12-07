@@ -1,5 +1,9 @@
 Revision history for Net-CIDR-MobileJP
 
+0.0.7  Thu Dec  7 15:01:11 JST 2006
+    suck around ezweb's html version up.
+    thanks to HIROSE, Masaaki
+
 0.0.6  Mon Nov 20 16:50:53 JST 2006
     fixed Makefile.PL(thanks to Masayoshi Sekimura)
 
