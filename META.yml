@@ -4,6 +4,7 @@ author:
   - Tokuhiro Matsuno  C<< <tokuhiro __at__ mobilefactory.jp> >>
 build_requires: 
   ExtUtils::MakeMaker: 6.11
+  WWW::MobileCarrierJP: 0
 distribution_type: module
 generated_by: Module::Install version 0.68
 license: perl
@@ -19,8 +20,6 @@ requires:
   File::ShareDir: 0
   HTTP::MobileAgent: 0
   Net::CIDR::Lite: 0
-  UNIVERSAL::require: 0
-  WWW::MobileCarrierJP: 0
   YAML: 0
   version: 0
-version: 0.0.9
+version: 0.10
