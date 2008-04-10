@@ -1,11 +1,12 @@
 --- 
 abstract: mobile ip address in Japan
-author: Tokuhiro Matsuno  C<< <tokuhiro __at__ mobilefactory.jp> >>
+author: 
+  - Tokuhiro Matsuno  C<< <tokuhiro __at__ mobilefactory.jp> >>
 build_requires: 
   ExtUtils::MakeMaker: 6.11
   WWW::MobileCarrierJP: 0.11
 distribution_type: module
-generated_by: Module::Install version 0.650
+generated_by: Module::Install version 0.68
 license: perl
 meta-spec: 
   url: http://module-build.sourceforge.net/META-spec-v1.3.html
@@ -21,4 +22,4 @@ requires:
   Net::CIDR::Lite: 0
   YAML: 0
   version: 0
-version: 0.11
+version: 0.12
