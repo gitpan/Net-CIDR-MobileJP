@@ -7,7 +7,6 @@ use File::Spec;
 name            'Net-CIDR-MobileJP';
 all_from        'lib/Net/CIDR/MobileJP.pm';
 
-requires 'HTTP::MobileAgent'    => 0;
 requires 'Net::CIDR::Lite'      => 0;
 requires 'YAML'                 => 0;
 requires 'version'              => 0;
@@ -16,6 +15,7 @@ requires 'File::ShareDir'       => 0;
 build_requires 'WWW::MobileCarrierJP' => '0.11';
 
 install_share;
+author_tests 'xt';
 
 my $cwd = Cwd::cwd;
 auto_install_now;
