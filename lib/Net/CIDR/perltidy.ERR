@@ -1,0 +1,9 @@
+
+There is no previous '(' to match a ')' on line 1
+1: ... le('Net-CIDR-MobileJP', 'cidr.yaml')) } || eval { File::ShareDir ...
+                                           ^
+
+There is no previous '(' to match a ')' on line 1
+1: ... le('Net-CIDR-MobileJP', 'cidr.yaml')) };
+                                           ^
+1:	To save a full .LOG file rerun with -g

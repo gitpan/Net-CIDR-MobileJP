@@ -5,7 +5,7 @@ use 5.00800;
 use Carp;
 use Net::CIDR::Lite;
 use File::ShareDir ();
-our $VERSION = '0.16';
+our $VERSION = '0.17';
 
 our $yaml_loader;
 BEGIN {
@@ -54,7 +54,14 @@ sub _load_config {
         $data = $stuff;
     } else {
         # generated file
-        $data = $yaml_loader->(File::ShareDir::module_file('Net::CIDR::MobileJP', 'cidr.yaml'));
+        my $file = eval {
+            # use module_file first, this is needed by backward-compatibility
+            File::ShareDir::module_file( 'Net::CIDR::MobileJP', 'cidr.yaml' )
+        } || eval {
+            File::ShareDir::dist_file( 'Net-CIDR-MobileJP', 'cidr.yaml' )
+        };
+        die $@ unless $file;
+        $data = $yaml_loader->($file);
     }
     return $data;
 }
