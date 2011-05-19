@@ -8,7 +8,7 @@ configure_requires:
   ExtUtils::MakeMaker: 6.42
   File::ShareDir: 1
 distribution_type: module
-generated_by: 'Module::Install version 0.99'
+generated_by: 'Module::Install version 1.01'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -22,11 +22,11 @@ no_index:
     - xt
 requires:
   File::ShareDir: 1.02
-  Net::CIDR::Lite: 0.2
-  WWW::MobileCarrierJP: 0.37
+  Net::CIDR::Lite: 0.21
+  WWW::MobileCarrierJP: 0.54
   YAML: 0
   perl: 5.8.0
 resources:
   license: http://dev.perl.org/licenses/
   repository: git://github.com/tokuhirom/p5-net-cidr-mobilejp.git
-version: 0.20
+version: 0.21
