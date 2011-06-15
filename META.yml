@@ -23,10 +23,10 @@ no_index:
 requires:
   File::ShareDir: 1.02
   Net::CIDR::Lite: 0.21
-  WWW::MobileCarrierJP: 0.54
+  WWW::MobileCarrierJP: 0.55
   YAML: 0
   perl: 5.8.0
 resources:
   license: http://dev.perl.org/licenses/
   repository: git://github.com/tokuhirom/p5-net-cidr-mobilejp.git
-version: 0.21
+version: 0.23
